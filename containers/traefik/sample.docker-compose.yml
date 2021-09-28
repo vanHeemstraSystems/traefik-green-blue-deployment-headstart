@@ -12,5 +12,13 @@ services:
         PROXY_PORT: ${PROXY_PORT}
     env_file:
       - .env
+    container_name: traefik-v2.5
+    volumes:
+      - '/var/run/docker.sock:/tmp/docker.sock:ro'
+      - `pwd`:/etc/traefik_providers
     ports:
     - "80:80"
+    command:
+      - --providers.docker
+      - --providers.docker.exposedbydefault=false
+      - --providers.file.filename=/etc/traefik_providers/file_provider.yml
