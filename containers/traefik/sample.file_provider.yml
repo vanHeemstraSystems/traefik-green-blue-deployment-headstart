@@ -1,0 +1,13 @@
+http:
+  routers:
+    router0:
+      service: app_weighted
+      rule: "Host(`example.com`)"
+  services:
+    app_weighted:
+      weighted:
+        services:
+          - name: app_green@docker  # I'm not defined yet
+            weight: 80
+          - name: app_canary@docker  # I'm not defined yet
+            weight: 20
