@@ -12,5 +12,10 @@ services:
         PROXY_PORT: ${PROXY_PORT}
     env_file:
       - .env
+    container_name: app_canary_01
+    labels:
+      - traefik.enable=true
+      - traefik.http.services.app_canary.loadbalancer.server.port=80
+      - traefik.http.routers.app_canary_01.entrypoints=traefik  
     ports:
     - "80:80"
