@@ -1,3 +1,5 @@
+# Place this file in /etc/traefik_providers/ directory as file_provider.yml
+
 http:
   routers:
     router0:
