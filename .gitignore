@@ -1,5 +1,6 @@
 /containers/traefik/.env
 /containers/traefik/docker-compose.yml
+/containers/traefik/file_provider.yml
 /containers/app_green/.env
 /containers/app_green/docker-compose.yml
 /containers/app_canary/.env
